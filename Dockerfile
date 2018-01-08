@@ -6,6 +6,7 @@ FROM debian:latest
 #caldera/dep/crater/crater/CraterMain.exe
 #https://github.com/mitre/caldera-crater/releases/download/v0.1.0/CraterMainWin7.exe
 #https://github.com/mitre/caldera-crater/releases/download/v0.1.0/CraterMainWin8up.exe
+#the agent file needs to be put somewhere it can be served from still....
 
 RUN set -ex; \
   && apt-get update; \
@@ -17,5 +18,10 @@ RUN service mongodb start; \
   && git clone https://github.com/mitre/caldera.git; \
   && cd ~/caldera/caldera; \
   && python3-pip install -r requirements.txt; \
+  && cd ~/caldera/dep/; \
+  && wget "https://github.com/mitre/caldera-crater/releases/download/v0.1.0/CraterMainWin7.exe"; \
+  && wget "https://github.com/mitre/caldera-crater/releases/download/v0.1.0/CraterMainWin8up.exe"; \
+  && wget "https://www.microsoft.com/en-us/download/details.aspx?id=48145"; \
+  && wget "https://github.com/mitre/caldera-agent/releases/download/v0.1.0/cagent.exe" \ 
   && cd ~/caldera/caldera; \
   && python3 caldera.py &
