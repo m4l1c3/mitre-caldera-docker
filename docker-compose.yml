@@ -4,7 +4,7 @@ services:
     caldera:
         image: debian:latest
         build:
-            context: ./caldera
+            context: ./docker
         ports:
             - "8888:8888"
         volumes:

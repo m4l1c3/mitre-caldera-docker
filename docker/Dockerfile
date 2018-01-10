@@ -6,8 +6,7 @@ RUN set -ex; \
   pip3 install --upgrade setuptools; \
   rm /etc/mongodb.conf;
 COPY conf/mongodb.conf  /etc
-RUN mkdir -p /opt/mongo/data; \
-    cd /root; \
+RUN cd /root; \
     git clone https://github.com/mitre/caldera.git; \
     cd /root/caldera/caldera; \
     pip3 install -r requirements.txt; \
