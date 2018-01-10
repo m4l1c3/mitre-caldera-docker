@@ -1,0 +1,11 @@
+version: "3.3"
+
+services:
+    caldera:
+        image: debian:latest
+        build:
+            context: ./caldera
+        ports:
+            - "8888:8888"
+        volumes:
+            - "./docker-mongo-data:/data/db"
