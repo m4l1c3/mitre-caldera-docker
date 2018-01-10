@@ -21,4 +21,4 @@ RUN mkdir -p /opt/mongo/data; \
     apt-get remove -y --purge wget; \
     mkdir -p /conf;
 EXPOSE 8888
-ENTRYPOINT service mongodb start && cd /root/caldera/caldera && python3 caldera.py && /bin/bas
+ENTRYPOINT service mongodb start && cd /root/caldera/caldera && python3 caldera.py && /bin/bash
