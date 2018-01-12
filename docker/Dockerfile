@@ -6,7 +6,6 @@ RUN set -ex; \
   pip3 install --upgrade setuptools; \
   rm /etc/mongodb.conf;
 COPY conf/mongodb.conf  /etc
-COPY caldera/ /root/caldera/
 COPY conf/*.sh /root/
 RUN cd /root && chmod +x *.sh && ./setup.sh;
 RUN rm -f /root/setup.sh && apt-get remove -y --purge wget;
