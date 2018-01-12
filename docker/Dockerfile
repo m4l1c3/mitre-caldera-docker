@@ -12,4 +12,4 @@ RUN cd /root && chmod +x *.sh && ./setup.sh;
 RUN rm -f /root/setup.sh && apt-get remove -y --purge wget;
 
 EXPOSE 8888
-ENTRYPOINT ['/root/startup.sh']
+ENTRYPOINT ["/root/startup.sh"]
