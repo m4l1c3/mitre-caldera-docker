@@ -8,3 +8,4 @@ services:
             - "8888:8888"
         volumes:
             - "./docker-mongo-data:/data/db"
+            - "~/code/caldera/caldera/app/operation:/root/caldera/caldera/app/operation"
